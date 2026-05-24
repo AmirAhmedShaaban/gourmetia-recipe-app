@@ -153,6 +153,12 @@ Each layer has a clearly defined responsibility.
 
 # ⚙️ MVC Architecture
 
+---
+
+![MVC-Architecture](MVC-img.png)
+
+---
+
 ## 📦 Model Layer
 
 Responsible for:
