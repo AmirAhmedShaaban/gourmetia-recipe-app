@@ -1,0 +1,97 @@
+@use "../util/" as *;
+@use "../vendors" as *;
+
+#app-container {
+  position: relative;
+}
+
+.searchbar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999999;
+  cursor:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M24 2.017L21.983 0 12 9.983 2.017 0 0 2.017 9.983 12 0 21.983 2.017 24 12 14.017 21.983 24 24 21.983 14.017 12z'/%3E%3C/svg%3E")
+      12 12,
+    auto;
+}
+
+.searchbar-popup {
+  background-color: #fff;
+  border-bottom: rem(1) solid rgba(0, 0, 0, 0.1);
+  height: rem(380);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999999;
+  animation: scroll 1s;
+  cursor: default;
+
+  @include media-breakpoint-down(md) {
+    height: rem(300);
+  }
+
+  &__container {
+    margin-top: rem(100);
+  }
+
+  &__form {
+    margin: rem(10) 0 rem(10) 0;
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    padding: rem(12);
+    line-height: 1.6;
+    font-size: rem(44);
+    font-weight: 700;
+    letter-spacing: rem(3);
+
+    @include media-breakpoint-down(md) {
+      font-size: rem(15);
+    }
+  }
+
+  &__input::placeholder {
+    color: #666;
+    opacity: 0.3;
+  }
+
+  &__btn {
+    border: none;
+    outline: none;
+    background: none;
+
+    .nav-icon {
+      font-size: rem(32);
+
+      @include media-breakpoint-down(md) {
+        font-size: rem(22);
+      }
+    }
+  }
+
+  &__text {
+    color: #666;
+    letter-spacing: rem(2);
+
+    @include media-breakpoint-down(md) {
+      font-size: rem(12);
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translatey(rem(-100));
+  }
+
+  100% {
+    transform: translatey(0);
+  }
+}

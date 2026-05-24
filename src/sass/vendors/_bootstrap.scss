@@ -1,0 +1,9 @@
+@use "../global/colors" as *;
+@use "../global/typography" as *;
+
+@forward "../../../node_modules/bootstrap/scss/bootstrap" with (
+  $primary: $primary-color,
+  $secondary: $secondary-color,
+  $font-family-sans-serif: $app-font-main,
+  $btn-font-weight: 500
+);

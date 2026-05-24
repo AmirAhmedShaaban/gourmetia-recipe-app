@@ -1,0 +1,15 @@
+@use "../util/" as *;
+@use "../global/colors" as *;
+
+.recipe-load__icon.recipes__card__icon-container {
+  position: static;
+  border: rem(1) solid $secondary-color;
+  &:hover {
+    background-color: $primary-color;
+    border: rem(1) solid $primary-color;
+
+    .recipes__card__icon {
+      stroke: #fff;
+    }
+  }
+}

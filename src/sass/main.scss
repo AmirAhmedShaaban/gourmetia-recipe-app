@@ -1,0 +1,11 @@
+// 1. Vendors (Bootstrap, FontAwesome)
+@use "vendors";
+
+// 2. Utils (Functions, Mixins)
+@use "util";
+
+// 3. Global (Base, Colors, Typography)
+@use "global";
+
+// 4. Components (Hero, Nav, Recipes, etc.)
+@use "components";

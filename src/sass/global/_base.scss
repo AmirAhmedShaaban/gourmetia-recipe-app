@@ -1,0 +1,59 @@
+@use "../util/" as *;
+@use "colors" as *;
+@use "typography" as *;
+@use "../vendors" as *;
+
+html,
+body {
+  font-family: $app-font-main;
+  scroll-behavior: smooth;
+}
+
+*:focus-visible {
+  outline: rem(2) solid $primary-color;
+  outline-offset: rem(2);
+}
+
+::-webkit-scrollbar {
+  width: rem(8);
+}
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+  border-radius: rem(4);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container-narrow {
+  max-width: rem(250) !important;
+  margin: 0 auto !important;
+}
+
+.btn-secondary {
+  padding: rem(10) rem(16) !important;
+  &:hover {
+    color: #fff !important;
+    background-color: $primary-color !important;
+    border-color: $primary-color !important;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(8) rem(12) !important;
+    font-size: rem(15);
+  }
+}
+
+.btn-secondary.btn--update-servings {
+  padding: rem(8) rem(9) !important;
+}

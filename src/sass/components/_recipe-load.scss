@@ -1,0 +1,27 @@
+@use "../util/" as *;
+@use "../global/colors" as *;
+
+.recipe-load {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &__img {
+    height: rem(740);
+  }
+
+  &__data {
+    &::before {
+      background-color: lighten($color: $secondary-color, $amount: 4%);
+      position: absolute;
+      content: "";
+      display: block;
+      width: 200vw;
+      left: -100vw;
+      top: rem(-200);
+      height: rem(500);
+      bottom: 0;
+      z-index: -1;
+    }
+  }
+}

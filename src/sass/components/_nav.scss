@@ -1,0 +1,12 @@
+@use "../util/" as *;
+@use "../global/colors" as *;
+
+.nav-icon {
+  font-size: rem(20);
+  color: #000;
+
+  &:hover {
+    color: $primary-color;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,108 @@
+@use "../util/" as *;
+@use "../global/colors" as *;
+@use "../vendors" as *;
+
+.bookmarks {
+  border: none;
+  background: none;
+  position: relative;
+  &:focus-within + .bookmarks-drop-down {
+    visibility: visible;
+    opacity: 100%;
+  }
+}
+
+.bookmarks-drop-down {
+  width: rem(400);
+  min-height: rem(150);
+  background-color: $secondary-color;
+  position: absolute;
+  top: rem(100);
+  right: rem(190);
+  z-index: 999;
+  border-radius: rem(5);
+  box-shadow: 0 rem(2) rem(2) rem(1) rgba(0, 0, 0, 0.03);
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+
+  @include media-breakpoint-down(lg) {
+    right: rem(50);
+  }
+
+  @include media-breakpoint-down(md) {
+    right: rem(50);
+    width: rem(300);
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: rem(15);
+    gap: rem(10);
+    margin: rem(20);
+    padding: 0;
+    transition: all 0.3s;
+    flex: 1;
+  }
+}
+
+.preview {
+  // Container for each preview card
+  background-color: #fff;
+  padding: rem(15);
+  border-radius: rem(5);
+
+  &:hover {
+    background-color: #333;
+
+    .preview__author {
+      color: #fff;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: rem(10);
+  }
+
+  &__fig {
+    width: rem(50);
+    height: rem(50);
+    overflow: hidden;
+    border-radius: rem(5);
+    margin: 0;
+  }
+
+  &__fig img {
+    object-fit: cover;
+    border-radius: rem(5);
+  }
+
+  &__data {
+    // adjust spacing for text below image
+    text-align: left;
+  }
+
+  &__name {
+    font-size: rem(16);
+    margin: 0;
+    color: $primary-color;
+    font-weight: 700;
+  }
+
+  &__author {
+    font-size: rem(14);
+    font-weight: 500;
+    margin: 0;
+    color: #000;
+  }
+}

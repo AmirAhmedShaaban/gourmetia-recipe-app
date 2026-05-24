@@ -1,0 +1,170 @@
+@use "../util/" as *;
+@use "../global/colors" as *;
+@use "../vendors" as *;
+
+.recipe-footer {
+  background: #ffffff;
+  border-top: rem(1) solid rgba(0, 0, 0, 0.1);
+  padding: rem(16) 0;
+  position: relative;
+  overflow: hidden;
+
+  &__img {
+    width: rem(280);
+
+    &--pizza {
+      position: absolute;
+      right: rem(-120);
+      bottom: rem(5);
+      animation: spin 30s infinite ease-in-out;
+      z-index: 1;
+
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+
+    &--tacos {
+      position: absolute;
+      left: 0;
+      bottom: rem(10);
+      z-index: 1;
+      animation: peek-a-boo 15s infinite ease-in-out;
+
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+  }
+
+  &__brand {
+    z-index: 2;
+  }
+
+  .brand-name {
+    font-size: rem(24);
+    font-weight: 600;
+    letter-spacing: rem(-0.3);
+    margin-bottom: rem(12);
+  }
+
+  .brand-tagline {
+    font-size: rem(16);
+    margin-top: rem(4);
+  }
+
+  .footer-heading {
+    font-size: rem(14);
+    letter-spacing: rem(1);
+    text-transform: uppercase;
+    margin-bottom: rem(14);
+    color: #333333;
+  }
+
+  .footer-link {
+    font-size: rem(16);
+    margin-bottom: rem(9);
+    color: #333333;
+    display: block;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(40);
+    height: rem(40);
+    border-radius: 50%;
+    border: rem(2) solid rgba(0, 0, 0, 0.1);
+    font-size: rem(17);
+    text-decoration: none;
+    transition:
+      border-color 0.15s,
+      color 0.15s,
+      background 0.15s;
+    background: #ffffff;
+
+    &:hover {
+      border-color: $primary-color;
+      background: $secondary-color;
+      color: $primary-color;
+    }
+  }
+
+  .divider {
+    border-color: #cccccc;
+    margin: rem(16) 0;
+  }
+
+  .bottom-text {
+    font-size: rem(14);
+    margin-bottom: rem(12);
+    z-index: 2;
+  }
+
+  .bottom-link {
+    text-decoration: none;
+    font-size: rem(14);
+    margin-right: rem(16);
+    transition: color 0.15s;
+    z-index: 2;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .footer-categories {
+    z-index: 2;
+  }
+
+  .category-pill {
+    display: inline-block;
+    background: $secondary-color;
+    color: #000;
+    font-size: rem(14);
+    padding: rem(8) rem(12);
+    border: none;
+    border-radius: rem(5);
+    margin: 0 rem(8) rem(12) 0;
+    text-decoration: none;
+    transition: background 0.15s;
+
+    &:hover {
+      background: #333333;
+      color: #fff;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateX(20%) rotate(360deg);
+  }
+
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes peek-a-boo {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-30%) translateY(-10%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

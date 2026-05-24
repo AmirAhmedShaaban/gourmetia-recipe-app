@@ -1,0 +1,16 @@
+@use "../util/" as *;
+
+.ing-num {
+  width: rem(22);
+  height: rem(22);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 rem(4) rem(6) rem(-1) rgba(0, 0, 0, 0.1);
+  color: #fe571a;
+  font-size: rem(11);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

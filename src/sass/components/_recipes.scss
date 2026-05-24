@@ -1,0 +1,56 @@
+@use "../util/" as *;
+@use "../global/colors" as *;
+@use "sass:color";
+
+.recipes {
+  &__block {
+    cursor: pointer;
+
+    &:hover {
+      background-color: color.scale($secondary-color, $lightness: 1%);
+    }
+  }
+
+  &__img {
+    height: rem(380);
+    width: 100%;
+  }
+
+  &__card {
+    height: rem(380);
+
+    &__icon {
+      stroke: $primary-color;
+
+      &-fill {
+        fill: $primary-color;
+      }
+    }
+
+    &__icon-container {
+      position: absolute;
+      top: rem(15);
+      right: rem(30);
+      border-radius: rem(7);
+      background-color: #fff;
+      border: none;
+      margin: 0;
+      padding: 0;
+
+      &:hover {
+        background-color: $primary-color;
+
+        .recipes__card__icon {
+          stroke: #fff;
+          &-fill {
+            fill: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.card-col {
+  position: relative;
+}

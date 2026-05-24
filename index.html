@@ -1,0 +1,1209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Gourmetia: Discover the world of culinary arts! Search for the best global recipes, ingredients, and food categories to make every meal a masterpiece."
+    />
+    <meta name="author" content="Amir Shaaban" />
+    <meta
+      name="keywords"
+      content="cooking, recipes, food, Gourmetia, kitchen, meals, global recipes"
+    />
+
+    <meta
+      property="og:title"
+      content="Gourmetia | Discover the world of culinary arts"
+    />
+    <meta
+      property="og:description"
+      content="Browse thousands of delicious and easy recipes in one place with Gourmetia."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com/" />
+    <meta
+      property="og:image"
+      content="https://yourdomain.com/path-to-your-og-image.jpg"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita+Swashed:wght@300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./src/assets/imgs/fav-icon.png"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="/src/sass/main.scss" />
+    <script src="/src/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/src/js/controller.js"></script>
+    <title>Gourmetia</title>
+  </head>
+  <body>
+    <main id="app-container">
+      <header class="nav bg-white">
+        <div class="container">
+          <nav
+            class="d-flex justify-content-between align-items-center py-3 gap-3"
+          >
+            <a
+              href="#home?reset=true"
+              class="logo d-flex align-items-center gap-3"
+            >
+              <div
+                class="logo__container bg-primary rounded p-1 d-flex align-items-center"
+              >
+                <svg
+                  fill="#fff"
+                  height="30px"
+                  width="30px"
+                  version="1.1"
+                  id="Icons"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 32 32"
+                  xml:space="preserve"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <g>
+                      <path
+                        d="M20.6,12.8c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l5.4-5.4c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0l-5.4,5.4 C20.2,11.8,20.2,12.4,20.6,12.8z"
+                      ></path>
+                      <path
+                        d="M30.1,10.1c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0l-4.9,4.9c-1.3,1.3-2.5,2-3.7,2c-0.2,0-0.5,0-0.7,0.1L17.7,14 c0-0.2,0.1-0.5,0.1-0.7c0.1-1.1,0.8-2.4,2-3.7l4.9-4.9c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0l-4.9,4.9c-1.3,1.3-2.1,2.7-2.5,4L7.2,3.5 c-0.4-0.4-1-0.4-1.4,0c-2.9,2.9-2.9,7.7,0,10.7l8.3,8.3c0.3,0.3,0.7,0.4,1.1,0.2c1.1-0.5,2.4-0.2,3.2,0.8l4.1,5.1 c0.6,0.8,1.5,1.2,2.5,1.3c0.1,0,0.1,0,0.2,0c0.9,0,1.8-0.4,2.5-1c0.7-0.7,1-1.5,1-2.5s-0.4-1.8-1-2.5l-6.5-6.5 c1.3-0.3,2.7-1.1,4-2.5L30.1,10.1z"
+                      ></path>
+                      <path
+                        d="M4.7,24.2c-0.7,0.6-1.2,1.4-1.3,2.3c-0.1,0.9,0.3,1.8,0.9,2.5C4.9,29.7,5.7,30,6.6,30c0.1,0,0.2,0,0.2,0 c0.9-0.1,1.8-0.5,2.3-1.2l3.7-4.6l-3.6-3.6L4.7,24.2z"
+                      ></path>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <span class="logo__text text-primary mb-2">Gourmetia</span>
+            </a>
+            <div
+              class="d-flex align-items-center justify-content-center gap-2 gap-md-3"
+            >
+              <button class="bookmarks m-0 p-0">
+                <i class="nav-icon fa-regular fa-bookmark pt-1 m-0"></i>
+              </button>
+              <div class="bookmarks-drop-down">
+                <ul class="bookmarks-drop-down__list">
+                  <div
+                    class="d-flex align-items-center justify-content-center gap-3"
+                    role="alert"
+                  >
+                    <i
+                      class="fa-solid fa-face-laugh-beam text-primary fw-bold fs-2"
+                    ></i
+                    ><span class="fw-bold">
+                      No bookmarks yet. Find a nice recipe and bookmark it
+                      :)</span
+                    >
+                  </div>
+
+                  <!-- <li class="preview">
+                      <a class="preview__link" href="#">
+                        <figure class="preview__fig">
+                          <img
+                            src="src/assets/imgs/joseph-gonzalez.jpg"
+                            alt="Test"
+                          />
+                        </figure>
+                        <div class="preview__data">
+                          <h4 class="preview__name">
+                            Pasta with Tomato Cream ...
+                          </h4>
+                          <p class="preview__author">The Pioneer Woman</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="preview">
+                      <a class="preview__link" href="#">
+                        <figure class="preview__fig">
+                          <img
+                            src="src/assets/imgs/joseph-gonzalez.jpg"
+                            alt="Test"
+                          />
+                        </figure>
+                        <div class="preview__data">
+                          <h4 class="preview__name">
+                            Pasta with Tomato Cream ...
+                          </h4>
+                          <p class="preview__author">The Pioneer Woman</p>
+                        </div>
+                      </a>
+                    </li> -->
+                </ul>
+              </div>
+              <i
+                class="searchbar-glass nav-icon fa-solid fa-magnifying-glass"
+              ></i>
+              <button
+                class="btn btn-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#addRecipeModal"
+              >
+                Add Recipe
+              </button>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Home -->
+
+      <section id="home-page" class="view">
+        <div class="hero rounded mx-3 my-2">
+          <div class="hero__tinted-textbox rounded">
+            <h1 class="h1 text-light mt-3 mx-5 p-3 lh-base">
+              Got that perfect dish stuck in your head but no clue where to
+              start?
+            </h1>
+            <p class="hero__text text-light mx-5 px-3">
+              Unlock your palate and drive your culinary vision. Shift wild
+              cravings into real plates, let flavors manifest, and master the
+              perfect recipe awaiting you now
+            </p>
+            <form class="hero__searchbar w-75 mt-5 mb-3 px-3">
+              <div
+                class="hero__searchbar__container h-100 py-1 bg-light rounded d-flex align-items-center justify-content-center"
+              >
+                <i class="fs-2 text-primary fa-solid fa-utensils"></i>
+                <input
+                  class="hero__searchbar__input bg-light"
+                  type="text"
+                  placeholder="Find what do you want to cook today"
+                  id="search-input"
+                />
+                <button
+                  type="submit"
+                  class="hero__searchbar__icon btn btn-primary"
+                >
+                  <i class="fs-4 text-light fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </form>
+            <p class="hero__text mt-3 mx-5 px-3 text-light">
+              Type a keyword and discover recipes that turn your cravings into
+              delicious reality!
+            </p>
+          </div>
+        </div>
+        <section id="brows-recipes" class="recipes">
+          <h1 class="fw-bold mt-5 text-center text-black">Recipes</h1>
+          <div class="container">
+            <p class="mt-3 text-center text-black">
+              Explore our latest recipes, from quick snacks to hearty meals and
+              indulgent desserts.
+            </p>
+          </div>
+          <div
+            class="recipes__blocks my-5 d-flex flex-wrap align-items-center justify-content-center gap-2 gap-md-3 mx-1 mx-md-3"
+          >
+            <!-- تم تعديل mx-4 إلى mx-auto في كل الأيقونات للتوسطن الأفقي المثالي -->
+            <div
+              class="recipes__block border border-secondary rounded py-3 px-2 d-flex flex-column justify-content-center text-center"
+              style="
+                flex: 1 1 calc(50% - 1rem);
+                min-width: 100px;
+                max-width: 130px;
+                min-height: 140px;
+                cursor: pointer;
+              "
+            >
+              <i class="fa-solid fa-bacon fs-2 mb-2 mx-auto"></i>
+              <p class="fs-6 fw-bold mb-0">Beef</p>
+              <p class="small mb-0 text-body-secondary">2 Recipes</p>
+            </div>
+            <div
+              class="recipes__block border border-secondary rounded py-3 px-2 d-flex flex-column justify-content-center text-center"
+              style="
+                flex: 1 1 calc(50% - 1rem);
+                min-width: 100px;
+                max-width: 130px;
+                min-height: 140px;
+                cursor: pointer;
+              "
+            >
+              <i class="fa-solid fa-drumstick-bite fs-2 mb-2 mx-auto"></i>
+              <p class="fs-6 fw-bold mb-0">Chicken</p>
+              <p class="small mb-0 text-body-secondary">4 Recipes</p>
+            </div>
+            <div
+              class="recipes__block border border-secondary rounded py-3 px-2 d-flex flex-column justify-content-center text-center"
+              style="
+                flex: 1 1 calc(50% - 1rem);
+                min-width: 100px;
+                max-width: 130px;
+                min-height: 140px;
+                cursor: pointer;
+              "
+            >
+              <i class="fa-solid fa-cookie-bite fs-2 mb-2 mx-auto"></i>
+              <p class="fs-6 fw-bold mb-0">Desserts</p>
+              <p class="small mb-0 text-body-secondary">6 Recipes</p>
+            </div>
+            <div
+              class="recipes__block border border-secondary rounded py-3 px-2 d-flex flex-column justify-content-center text-center"
+              style="
+                flex: 1 1 calc(50% - 1rem);
+                min-width: 100px;
+                max-width: 130px;
+                min-height: 140px;
+                cursor: pointer;
+              "
+            >
+              <i class="fa-solid fa-fish-fins fs-2 mb-2 mx-auto"></i>
+              <p class="fs-6 fw-bold mb-0">Seafood</p>
+              <p class="small mb-0 text-body-secondary">3 Recipes</p>
+            </div>
+            <div
+              class="recipes__block border border-secondary rounded py-3 px-2 d-flex flex-column justify-content-center text-center"
+              style="
+                flex: 1 1 calc(50% - 1rem);
+                min-width: 100px;
+                max-width: 130px;
+                min-height: 140px;
+                cursor: pointer;
+              "
+            >
+              <i class="fa-solid fa-bowl-food fs-2 mb-2 mx-auto"></i>
+              <p class="fs-6 fw-bold mb-0">Pasta</p>
+              <p class="small mb-0 text-body-secondary">7 Recipes</p>
+            </div>
+            <div
+              class="recipes__block border border-secondary rounded py-3 px-2 d-flex flex-column justify-content-center text-center"
+              style="
+                flex: 1 1 calc(50% - 1rem);
+                min-width: 100px;
+                max-width: 130px;
+                min-height: 140px;
+                cursor: pointer;
+              "
+            >
+              <i class="fa-solid fa-seedling fs-2 mb-2 mx-auto"></i>
+              <p class="fs-6 fw-bold mb-0">Vegan</p>
+              <p class="small mb-0 text-body-secondary">4 Recipes</p>
+            </div>
+            <div
+              class="recipes__block border border-secondary rounded py-3 px-2 d-flex flex-column justify-content-center text-center"
+              style="
+                flex: 1 1 calc(50% - 1rem);
+                min-width: 100px;
+                max-width: 130px;
+                min-height: 140px;
+                cursor: pointer;
+              "
+            >
+              <i class="fa-solid fa-leaf fs-2 mb-2 mx-auto"></i>
+              <p class="fs-6 fw-bold mb-0">Vegetarian</p>
+              <p class="small mb-0 text-body-secondary">5 Recipes</p>
+            </div>
+            <div
+              class="recipes__block border border-secondary rounded py-3 px-2 d-flex flex-column justify-content-center text-center"
+              style="
+                flex: 1 1 calc(50% - 1rem);
+                min-width: 100px;
+                max-width: 130px;
+                min-height: 140px;
+                cursor: pointer;
+              "
+            >
+              <i class="fas fa-bread-slice fs-2 mb-2 mx-auto"></i>
+              <p class="fs-6 fw-bold mb-0">Breakfast</p>
+              <p class="small mb-0 text-body-secondary">12 Recipes</p>
+            </div>
+            <div
+              class="recipes__block border border-secondary rounded py-3 px-2 d-flex flex-column justify-content-center text-center"
+              style="
+                flex: 1 1 calc(50% - 1rem);
+                min-width: 100px;
+                max-width: 130px;
+                min-height: 140px;
+                cursor: pointer;
+              "
+            >
+              <i class="fa-solid fa-bowl-rice fs-2 mb-2 mx-auto"></i>
+              <p class="fs-6 fw-bold mb-0">Side Dishes</p>
+              <p class="small mb-0 text-body-secondary">20 Recipes</p>
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div class="recipes__results py-3">
+            <!-- HomeView --Message-- -->
+            <div class="container bg-white">
+              <div
+                class="mb-5 d-flex gap-3 align-items-center justify-content-center"
+              >
+                <i
+                  class="fa-solid fa-face-laugh-beam fs-2 fw-bold text-primary"
+                ></i>
+                <p class="mb-0 fs-5">
+                  <strong class="fs-4">
+                    Hungry for a
+                    <span class="text-primary fw-bolder"
+                      >Masterpiece?</span
+                    > </strong
+                  ><br />
+                  <span class="fw-bold">
+                    Step into the kitchen of your dreams—search for a recipe, an
+                    ingredient or one of the categories above and let the magic
+                    begin!</span
+                  >
+                </p>
+              </div>
+
+              <!-- Home-Logo -->
+              <div
+                class="home-logo d-flex align-items-center justify-content-center"
+              ></div>
+
+              <!-- Row -->
+              <!-- <div class="recipes__cards container pt-3 my-5">
+                <div class="recipes__cards__container row row-cols-md-4 g-4">
+
+                  --Col--
+                  <div class="col">
+                    <a href="#">
+                      <div class="recipes__card rounded">
+                        <img
+                          class="recipes__img rounded"
+                          src="/src/assets/imgs/joseph-gonzalez.jpg"
+                          alt=""
+                        />
+                        <div
+                          role="button"
+                          class="recipes__card__icon-container"
+                        >
+                          <svg
+                            class="recipes__card__icon p-1"
+                            height="40px"
+                            width="40px"
+                            viewBox="0 -0.5 25 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g
+                              id="SVGRepo_tracerCarrier"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></g>
+                            <g id="SVGRepo_iconCarrier">
+                              <path
+                                class="recipes__card__icon"
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M18.507 19.853V6.034C18.5116 5.49905 18.3034 4.98422 17.9283 4.60277C17.5532 4.22131 17.042 4.00449 16.507 4H8.50705C7.9721 4.00449 7.46085 4.22131 7.08577 4.60277C6.7107 4.98422 6.50252 5.49905 6.50705 6.034V19.853C6.45951 20.252 6.65541 20.6407 7.00441 20.8399C7.35342 21.039 7.78773 21.0099 8.10705 20.766L11.907 17.485C12.2496 17.1758 12.7705 17.1758 13.113 17.485L16.9071 20.767C17.2265 21.0111 17.6611 21.0402 18.0102 20.8407C18.3593 20.6413 18.5551 20.2522 18.507 19.853Z"
+                                stroke="#fe571a"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              ></path>
+                            </g>
+                          </svg>
+                        </div>
+                      </div>
+                      <p class="text-primary mt-3 fw-bold mb-0">pasta</p>
+                      <p class="text-black fw-bolder fs-5 mt-2">
+                        Zesty Lemon Quinoa with Fresh Herbs
+                      </p>
+                      <div class="d-flex align-items-center gap-4">
+                        <div class="text-body-secondary">
+                          <i class="fa-regular fa-clock me-1 text-black"></i
+                          ><span>5 min</span>
+                        </div>
+                        <div class="text-body-secondary">
+                          <svg
+                            class="mb-1 me-1"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect width="20" height="20" fill="#F5F5F5" />
+                            <rect
+                              width="1876"
+                              height="988"
+                              transform="translate(-1758 -276)"
+                              fill="white"
+                            />
+                            <path
+                              d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z"
+                              fill="#F0F0F0"
+                            />
+                            <path
+                              d="M20.0003 10C20.0003 5.70037 17.2865 2.03494 13.4785 0.622009V19.3781C17.2865 17.9651 20.0003 14.2997 20.0003 10Z"
+                              fill="#D80027"
+                            />
+                            <path
+                              d="M0 10C0 14.2997 2.71379 17.9651 6.52176 19.378V0.622009C2.71379 2.03494 0 5.70037 0 10Z"
+                              fill="#0052B4"
+                            />
+                          </svg>
+                          <span>french</span>
+                        </div>
+                        <div class="text-body-secondary">
+                          <i class="fa-solid fa-crown me-1 text-black"></i
+                          ><span>Beginner</span>
+                        </div>
+                      </div></a
+                    >
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <div
+            class="pagination container container-narrow py-5 align-items-center justify-content-center"
+          >
+            <!-- <button class="btn btn-secondary btn-pag me-auto">
+              <div
+                class="d-flex align-items-center justify-content-center gap-2"
+              >
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Page 1</span>
+              </div>
+            </button>
+            <button class="btn btn-secondary btn-pag ms-auto">
+              <div
+                class="d-flex align-items-center justify-content-center gap-2"
+              >
+                <span>Page 2</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </button> -->
+          </div>
+        </section>
+      </section>
+      <!-- Recipe Load -->
+      <section id="recipe-page" class="view hidden">
+        <!-- <div class="recipe-load">
+          <div class="container my-4 py-5">
+            <div class="row g-35">
+              <div class="col-5">
+                <img
+                  class="recipe-load__img rounded"
+                  src="/src/assets/imgs/joseph-gonzalez.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="col-7">
+                <div class="recipe-load__data mx-5 my-3">
+                  <p class="text-primary fw-bold mb-2">Meat</p>
+                  <p class="text-black fs-2 fw-bold mb-4">Pizza</p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="d-flex flex-column gap-1">
+                      <div
+                        class="d-flex gap-2 align-items-center justify-content-center"
+                      >
+                        <i
+                          class="fa-solid fa-clock text-body-secondary fs-5"
+                        ></i>
+                        <p class="m-0 fw-bold text-black">15 min</p>
+                      </div>
+                      <p class="m-0 text-body-secondary fw-bold">
+                        Cooking Time
+                      </p>
+                    </div>
+                    <div class="d-flex flex-column gap-1">
+                      <div
+                        class="d-flex gap-2 align-items-center justify-content-center"
+                      >
+                        <i
+                          class="fa-solid fa-globe text-body-secondary fs-5"
+                        ></i>
+                        <p class="m-0 fw-bold text-black">France</p>
+                      </div>
+                      <p class="m-0 text-body-secondary fw-bold">Cuisine</p>
+                    </div>
+                    <div class="d-flex flex-column gap-1">
+                      <div
+                        class="d-flex gap-2 align-items-center justify-content-center"
+                      >
+                        <i
+                          class="fa-solid fa-utensils text-body-secondary fs-5"
+                        ></i>
+                        <p class="m-0 fw-bold text-black">Serves 11</p>
+                      </div>
+                      <p class="m-0 text-body-secondary fw-bold">Serving</p>
+                    </div>
+                    <div class="d-flex flex-column gap-1">
+                      <div
+                        class="d-flex gap-2 align-items-center justify-content-center"
+                      >
+                        <i
+                          class="fa-solid fa-crown text-body-secondary fs-5"
+                        ></i>
+                        <p class="m-0 fw-bold text-black">Easy</p>
+                      </div>
+                      <p class="m-0 text-body-secondary fw-bold">
+                        Degree of Difficulty
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="mt-5 pt-4 mb-4 pb-4 d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <p class="mb-1 text-black fw-bold">www.pizza.com</p>
+                      <p class="mb-0 text-body-secondary fw-bold">
+                        Recipe Publisher
+                      </p>
+                    </div>
+                    <div
+                      role="button"
+                      class="recipes__card__icon-container recipe-load__icon"
+                    >
+                      <svg
+                        class="recipes__card__icon p-1"
+                        height="40px"
+                        width="40px"
+                        viewBox="0 -0.5 25 25"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <path
+                            class="recipes__card__icon"
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M18.507 19.853V6.034C18.5116 5.49905 18.3034 4.98422 17.9283 4.60277C17.5532 4.22131 17.042 4.00449 16.507 4H8.50705C7.9721 4.00449 7.46085 4.22131 7.08577 4.60277C6.7107 4.98422 6.50252 5.49905 6.50705 6.034V19.853C6.45951 20.252 6.65541 20.6407 7.00441 20.8399C7.35342 21.039 7.78773 21.0099 8.10705 20.766L11.907 17.485C12.2496 17.1758 12.7705 17.1758 13.113 17.485L16.9071 20.767C17.2265 21.0111 17.6611 21.0402 18.0102 20.8407C18.3593 20.6413 18.5551 20.2522 18.507 19.853Z"
+                            stroke="#fe571a"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="d-flex gap-5">
+                    <div>
+                      <span class="text-body-secondary fs-5">Ingredients</span>
+                      <span class="text-black fw-bold fs-5">11 Person(s)</span>
+                    </div>
+                    <div class="d-flex gap-2">
+                      <button class="btn btn-secondary py-1 px-2 m-0">
+                        <i class="fa-solid fa-minus fw-bold"></i>
+                      </button>
+                      <button class="btn btn-secondary py-1 px-2 m-0">
+                        <i class="fa-solid fa-plus fw-bold"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="mt-5">
+                    <div class="row row-cols-1 row-cols-md-2 g-3">
+                      <div class="col">
+                        <div
+                          class="d-flex align-items-center p-2 border-bottom"
+                        >
+                          <i class="fa-solid fa-check text-primary me-3"></i>
+
+                          <div
+                            class="d-flex justify-content-between w-100 align-items-center"
+                          >
+                            <span class="fw-bold">500g</span>
+                            <span class="text-body-secondary text-end"
+                              >chicken</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </section>
+
+      <!-- Loader -->
+      <!-- <div class="container">
+        <div class="d-flex align-items-center justify-content-center m-5 p-5">
+          <div id="wifi-loader">
+            <svg class="circle-outer" viewBox="0 0 86 86">
+              <circle class="back" cx="43" cy="43" r="40"></circle>
+              <circle class="front" cx="43" cy="43" r="40"></circle>
+              <circle class="new" cx="43" cy="43" r="40"></circle>
+            </svg>
+            <svg class="circle-middle" viewBox="0 0 60 60">
+              <circle class="back" cx="30" cy="30" r="27"></circle>
+              <circle class="front" cx="30" cy="30" r="27"></circle>
+            </svg>
+            <svg class="circle-inner" viewBox="0 0 34 34">
+              <circle class="back" cx="17" cy="17" r="14"></circle>
+              <circle class="front" cx="17" cy="17" r="14"></circle>
+            </svg>
+            <div class="text" data-text="Loading"></div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Alert -->
+      <!-- <div class="container p-5">
+        <div class="mx-5 my-5" role="alert">
+          <div class="d-flex align-items-center justify-content-center gap-3">
+            <i
+              class="fa-solid fa-triangle-exclamation text-danger fw-bold fs-3"
+            ></i
+            ><span class="fw-bold fs-4">
+              Something went wrong. Please try again later</span
+            >
+          </div>
+        </div>
+      </div> -->
+    </main>
+    <!-- Footer -->
+    <footer class="recipe-footer pt-5 pb-3">
+      <img
+        class="recipe-footer__img recipe-footer__img--pizza"
+        src="./src/assets/imgs/pizza.png"
+        alt="pizza"
+      />
+      <img
+        class="recipe-footer__img recipe-footer__img--tacos"
+        src="./src/assets/imgs/tacos.png"
+        alt="pizza"
+      />
+
+      <div class="container">
+        <div class="row g-4 mb-4">
+          <!-- Brand + Social + Newsletter -->
+          <div class="recipe-footer__brand col-12 col-md-4">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <i
+                class="ti ti-tools-kitchen-2"
+                style="font-size: 22px; color: #c4622d"
+              ></i>
+              <a
+                href="#home?reset=true"
+                class="logo d-flex align-items-center gap-3"
+              >
+                <div
+                  class="logo__container bg-primary rounded p-1 d-flex align-items-center"
+                >
+                  <svg
+                    fill="#fff"
+                    height="25px"
+                    width="25px"
+                    version="1.1"
+                    id="Icons"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 32 32"
+                    xml:space="preserve"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <g>
+                        <path
+                          d="M20.6,12.8c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l5.4-5.4c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0l-5.4,5.4 C20.2,11.8,20.2,12.4,20.6,12.8z"
+                        ></path>
+                        <path
+                          d="M30.1,10.1c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0l-4.9,4.9c-1.3,1.3-2.5,2-3.7,2c-0.2,0-0.5,0-0.7,0.1L17.7,14 c0-0.2,0.1-0.5,0.1-0.7c0.1-1.1,0.8-2.4,2-3.7l4.9-4.9c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0l-4.9,4.9c-1.3,1.3-2.1,2.7-2.5,4L7.2,3.5 c-0.4-0.4-1-0.4-1.4,0c-2.9,2.9-2.9,7.7,0,10.7l8.3,8.3c0.3,0.3,0.7,0.4,1.1,0.2c1.1-0.5,2.4-0.2,3.2,0.8l4.1,5.1 c0.6,0.8,1.5,1.2,2.5,1.3c0.1,0,0.1,0,0.2,0c0.9,0,1.8-0.4,2.5-1c0.7-0.7,1-1.5,1-2.5s-0.4-1.8-1-2.5l-6.5-6.5 c1.3-0.3,2.7-1.1,4-2.5L30.1,10.1z"
+                        ></path>
+                        <path
+                          d="M4.7,24.2c-0.7,0.6-1.2,1.4-1.3,2.3c-0.1,0.9,0.3,1.8,0.9,2.5C4.9,29.7,5.7,30,6.6,30c0.1,0,0.2,0,0.2,0 c0.9-0.1,1.8-0.5,2.3-1.2l3.7-4.6l-3.6-3.6L4.7,24.2z"
+                        ></path>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <span class="logo__text text-primary mb-2">Gourmetia</span>
+              </a>
+            </div>
+            <p class="brand-tagline mb-4">
+              Recipes worth making, again and again.
+            </p>
+            <div class="d-flex gap-2 mb-4">
+              <a href="#" class="social-btn" aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" class="social-btn" aria-label="Pinterest"
+                ><i class="fa-brands fa-pinterest"></i
+              ></a>
+              <a href="#" class="social-btn" aria-label="YouTube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a href="#" class="social-btn" aria-label="TikTok"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-6 col-md-2">
+            <p class="footer-heading">Contact us</p>
+            <p>623 Harrison St., 2nd Floor, San Francisco, CA 94107</p>
+
+            <p>
+              <a class="footer-link" href="tel:415-201-6370">415-201-6370</a>
+              <a class="footer-link" href="mailto:hello@omnifood.com"
+                >hello@Gourmetia.com</a
+              >
+            </p>
+          </div>
+
+          <!-- Explore -->
+          <div class="col-6 col-md-2">
+            <p class="footer-heading">Explore</p>
+            <a href="#brows-recipes" class="footer-link">Browse recipes</a>
+            <a href="#home-page" class="footer-link">Search</a>
+          </div>
+
+          <!-- Categories -->
+          <div class="footer-categories col-12 col-md-4">
+            <!-- <p class="footer-heading">Popular categories</p>
+            <div>
+              <a href="#home" class="category-pill">🥩 Beef</a>
+              <a href="#home" class="category-pill">🍗 Chicken</a>
+              <a href="#home" class="category-pill">🎂 Dessert</a>
+              <a href="#home" class="category-pill">🍝 Pasta</a>
+              <a href="#home" class="category-pill">🦞 Seafood</a>
+              <a href="#home" class="category-pill">🍳 Side</a>
+              <a href="#home" class="category-pill">🌱 Vegan</a>
+              <a href="#home" class="category-pill">🍀 Vegetarian</a>
+              <a href="#home" class="category-pill">🥐 Breakfast</a>
+            </div> -->
+          </div>
+        </div>
+
+        <hr class="divider my-3" />
+
+        <div
+          class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2"
+        >
+          <p class="bottom-text mb-0">© 2026 Gourmetia. All rights reserved.</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="bottom-link">Privacy policy</a>
+            <a href="#" class="bottom-link">Terms of use</a>
+            <a href="#" class="bottom-link">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="searchbar-overlay hidden">
+      <div class="searchbar-popup">
+        <div class="searchbar-popup__container container">
+          <form class="searchbar-popup__form">
+            <div class="d-flex gap-5">
+              <input
+                class="searchbar-popup__input flex-grow-1"
+                type="text"
+                placeholder="Type here to search..."
+                id="searchbar-input"
+              />
+              <button class="searchbar-popup__btn">
+                <i class="nav-icon fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </form>
+          <hr class="divider mb-3 mt-1" />
+          <p class="searchbar-popup__text">
+            Please type here to search and press enter.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Add Recipe Modal -->
+    <div
+      class="modal fade"
+      id="addRecipeModal"
+      tabindex="-1"
+      aria-labelledby="addRecipeModalLabel"
+      aria-modal="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+        style="max-width: 1200px"
+      >
+        <form class="modal-content" style="margin: 10px">
+          <!-- Header -->
+          <div class="modal-header">
+            <h5 class="modal-title" id="addRecipeModalLabel">
+              <div
+                class="d-flex align-items-center justify-content-between gap-2"
+              >
+                <span>
+                  <i class="fs-5 text-primary fa-solid fa-utensils"></i>
+                </span>
+                <span>Add New Recipe</span>
+              </div>
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <!-- Body -->
+          <div class="modal-body">
+            <!-- Recipe Info -->
+            <p
+              class="text-uppercase text-muted fw-semibold"
+              style="font-size: 11px; letter-spacing: 0.08em"
+            >
+              Recipe Info
+            </p>
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="recipeTitle" class="form-label">Title</label>
+                <input
+                  type="text"
+                  name="title"
+                  class="form-control"
+                  id="recipeTitle"
+                  value="Classic Carbonara"
+                  placeholder="e.g. Classic Carbonara"
+                />
+              </div>
+              <div class="col-12">
+                <label for="recipeTitle" class="form-label">Category</label>
+                <input
+                  type="text"
+                  name="category"
+                  class="form-control"
+                  id="recipeTitle"
+                  value="Beef"
+                  placeholder="e.g. Beef"
+                />
+              </div>
+              <div class="col-12">
+                <label for="recipeUrl" class="form-label">Recipe URL</label>
+                <input
+                  type="url"
+                  name="sourceUrl"
+                  class="form-control"
+                  id="recipeUrl"
+                  value="https://example.com/recipe"
+                  placeholder="https://..."
+                />
+              </div>
+              <div class="col-12">
+                <label for="recipeImage" class="form-label">Image URL</label>
+                <input
+                  type="url"
+                  name="image"
+                  class="form-control"
+                  id="recipeImage"
+                  value="https://example.com/image.jpg"
+                  placeholder="https://..."
+                />
+              </div>
+              <div class="col-12">
+                <label for="recipePublisher" class="form-label"
+                  >Publisher</label
+                >
+                <input
+                  type="text"
+                  name="publisher"
+                  class="form-control"
+                  id="recipePublisher"
+                  value="NYT Cooking"
+                  placeholder="e.g. NYT Cooking"
+                />
+              </div>
+              <div class="col-12">
+                <label for="recipePublisher" class="form-label">Country</label>
+                <input
+                  type="text"
+                  name="country"
+                  class="form-control"
+                  id="recipeCountry"
+                  value="United Kingdom"
+                  placeholder="e.g. United Kingdom"
+                />
+              </div>
+
+              <div class="col-6">
+                <label for="recipePrep" class="form-label"
+                  >Prep Time (min)</label
+                >
+                <input
+                  type="number"
+                  name="cookingTime"
+                  class="form-control"
+                  id="recipePrep"
+                  value="30"
+                  placeholder="e.g. 30"
+                  min="0"
+                />
+              </div>
+              <div class="col-6">
+                <label for="recipeServings" class="form-label">Servings</label>
+                <input
+                  type="number"
+                  name="servings"
+                  class="form-control"
+                  id="recipeServings"
+                  value="4"
+                  placeholder="e.g. 4"
+                  min="1"
+                />
+              </div>
+            </div>
+
+            <!-- Ingredients -->
+            <p
+              class="text-uppercase text-muted fw-semibold mt-4 mb-2"
+              style="font-size: 11px; letter-spacing: 0.08em"
+            >
+              Ingredients
+            </p>
+
+            <!-- Column Labels -->
+            <div class="d-flex gap-2 mb-1" style="padding-left: 30px">
+              <span class="text-muted" style="width: 70px; font-size: 11px"
+                >Quantity</span
+              >
+              <span class="text-muted" style="width: 90px; font-size: 11px"
+                >Unit</span
+              >
+              <span class="text-muted" style="flex: 1; font-size: 11px"
+                >Description</span
+              >
+            </div>
+
+            <!-- Ingredient Rows -->
+            <div id="ingredientsList">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="ing-num">1</span>
+                <input
+                  type="number"
+                  name="quantity-1"
+                  class="form-control"
+                  style="width: 70px; flex-shrink: 0"
+                  value="2"
+                  placeholder="2"
+                />
+                <input
+                  type="text"
+                  name="unit-1"
+                  class="form-control"
+                  style="width: 90px; flex-shrink: 0"
+                  value="cups"
+                  placeholder="cups"
+                />
+                <input
+                  type="text"
+                  name="description-1"
+                  class="form-control"
+                  style="flex: 1"
+                  value="flour"
+                  placeholder="flour"
+                />
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="ing-num">2</span>
+                <input
+                  type="number"
+                  name="quantity-2"
+                  class="form-control"
+                  style="width: 70px; flex-shrink: 0"
+                  value="100"
+                  placeholder="100"
+                />
+                <input
+                  type="text"
+                  name="unit-2"
+                  class="form-control"
+                  style="width: 90px; flex-shrink: 0"
+                  value="g"
+                  placeholder="g"
+                />
+                <input
+                  type="text"
+                  name="description-2"
+                  class="form-control"
+                  style="flex: 1"
+                  value="pancetta"
+                  placeholder="pancetta"
+                />
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="ing-num">3</span>
+                <input
+                  type="number"
+                  name="quantity-3"
+                  class="form-control"
+                  style="width: 70px; flex-shrink: 0"
+                  value="3"
+                  placeholder="3"
+                />
+                <input
+                  type="text"
+                  name="unit-3"
+                  class="form-control"
+                  style="width: 90px; flex-shrink: 0"
+                  value="tbsp"
+                  placeholder="tbsp"
+                />
+                <input
+                  type="text"
+                  name="description-3"
+                  class="form-control"
+                  style="flex: 1"
+                  value="olive oil"
+                  placeholder="olive oil"
+                />
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="ing-num">4</span>
+                <input
+                  type="number"
+                  name="quantity-4"
+                  class="form-control"
+                  style="width: 70px; flex-shrink: 0"
+                  value="1"
+                  placeholder="1"
+                />
+                <input
+                  type="text"
+                  name="unit-4"
+                  class="form-control"
+                  style="width: 90px; flex-shrink: 0"
+                  value="tsp"
+                  placeholder="tsp"
+                />
+                <input
+                  type="text"
+                  name="description-4"
+                  class="form-control"
+                  style="flex: 1"
+                  value="salt"
+                  placeholder="salt"
+                />
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="ing-num">5</span>
+                <input
+                  type="number"
+                  name="quantity-5"
+                  class="form-control"
+                  style="width: 70px; flex-shrink: 0"
+                  value="2"
+                  placeholder="2"
+                />
+                <input
+                  type="text"
+                  name="unit-5"
+                  class="form-control"
+                  style="width: 90px; flex-shrink: 0"
+                  value="cloves"
+                  placeholder="cloves"
+                />
+                <input
+                  type="text"
+                  name="description-5"
+                  class="form-control"
+                  style="flex: 1"
+                  value="garlic"
+                  placeholder="garlic"
+                />
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="ing-num">6</span>
+                <input
+                  type="number"
+                  name="quantity-6"
+                  class="form-control"
+                  style="width: 70px; flex-shrink: 0"
+                  value="50"
+                  placeholder="50"
+                />
+                <input
+                  type="text"
+                  name="unit-6"
+                  class="form-control"
+                  style="width: 90px; flex-shrink: 0"
+                  value="g"
+                  placeholder="g"
+                />
+                <input
+                  type="text"
+                  name="description-6"
+                  class="form-control"
+                  style="flex: 1"
+                  value="parmesan"
+                  placeholder="parmesan"
+                />
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="ing-num">7</span>
+                <input
+                  type="number"
+                  name="quantity-6"
+                  class="form-control"
+                  style="width: 70px; flex-shrink: 0"
+                  value=""
+                  placeholder="3"
+                />
+                <input
+                  type="text"
+                  name="unit-6"
+                  class="form-control"
+                  style="width: 90px; flex-shrink: 0"
+                  value="Pinch"
+                  placeholder="Pinch"
+                />
+                <input
+                  type="text"
+                  name="description-6"
+                  class="form-control"
+                  style="flex: 1"
+                  value="salt"
+                  placeholder="Salt"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="modal-footer justify-content-between">
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-secondary">Add Recipe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
