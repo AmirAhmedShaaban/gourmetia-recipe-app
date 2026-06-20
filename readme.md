@@ -482,3 +482,9 @@ Frontend Developer focused on:
 - scalable frontend architecture,
 - modern JavaScript engineering,
 - and deeply understanding how frontend systems work under the hood.
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
