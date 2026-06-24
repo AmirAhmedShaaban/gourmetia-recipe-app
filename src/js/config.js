@@ -7,9 +7,9 @@ export const API_URL_SEARCH =
 export const API_URL_CATEGORY =
   "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
 
-export const SUPABASE_URL = "https://vdtrrhzshtmuojntlfue.supabase.co";
+export const SUPABASE_URL = process.env.SUPABASE_URL;
 
-export const SUPABASE_KEY = "sb_publishable_RCVgE5BorxacENlk-dI8cQ_pWpYZl8O";
+export const SUPABASE_KEY = process.env.SUPABASE_KEY;
 
 export const TIMEOUT_SEC = 10;
 

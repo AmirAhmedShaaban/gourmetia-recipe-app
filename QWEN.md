@@ -4,7 +4,7 @@
 
 Gourmetia is a state-driven Single Page Application (SPA) recipe platform built entirely with **Vanilla JavaScript (ES6+ modules)** — no frontend frameworks. It implements a custom **MVC architecture** with centralized state management, hash-based routing, and manual DOM reconciliation to demonstrate how reactive UIs work from first principles.
 
-**Tech stack:** Vanilla JS (ES6+), Parcel bundler, Sass (SCSS), Bootstrap 5 (grid/layout only), Font Awesome (local), Supabase (backend persistence), TheMealDB API (recipe data).
+**Tech stack:** Vanilla JS (ES6+), Parcel bundler, Sass (SCSS), Bootstrap 5 (grid/layout only), Font Awesome (local), Supabase (backend persistence), TheMealDB API (recipe data), fraction.js (ingredient scaling).
 
 ## Build & Development Commands
 
@@ -70,7 +70,7 @@ Hash-based: `#home?reset=true` (home page), `#recipes/<id>` (recipe detail). `hi
 
 | File | Purpose |
 |---|---|
-| `src/js/config.js` | API URLs, Supabase credentials, constants (TIMEOUT_SEC=10, RES_PER_PAGE=12, 265 country codes) |
+| `src/js/config.js` | API URLs, Supabase credentials, constants (`TIMEOUT_SEC=10`, `RES_PER_PAGE=12`, `COUNTRIES` — 265 country codes) |
 | `src/js/helpers.js` | `getJSON()` with timeout race pattern |
 | `src/js/supabase.js` | Supabase client initialization |
 | `src/js/model.js` | State, API interaction, data normalization (~1060 lines) |
@@ -100,29 +100,38 @@ Hash-based: `#home?reset=true` (home page), `#recipes/<id>` (recipe detail). `hi
 - **Event binding**: Views expose `addHandlerX(handler)` methods. The controller's `init()` registers all handlers. This keeps DOM event listeners in views and business logic in the controller.
 - **DOM reconciliation**: `view.update()` compares old and new DOM node-by-node and only mutates changed text content and attributes — no full re-render.
 - **Error handling**: Errors caught in controller, logged with `💥` emoji for visual grep-ability, surfaced to user via `view.renderError(message)`.
+- **Model imports**: Controller uses `import * as model from "./model"` (namespace import) to access all state and functions. Views use default export per-file pattern.
+- **2-space indentation** throughout JS files.
 
 ### SCSS
 
 - **Import order** (defined in `main.scss`): vendors → util → global → components.
-- **Units**: All font sizes and spacing use `px` — no `rem`/`em` unless from Bootstrap defaults.
+- **Units**: All font sizes and spacing use `px` values converted via `rem()` function (`calc($pixel / 16) + rem`). No raw `rem`/`em` values — always go through the helper function.
 - **Colors**: `$primary-color: #fe571a` (orange), `$secondary-color: #e4e4e7` (light gray).
 - **Fonts**: `$app-font-main: "Roboto", sans-serif`, `$app-logo-font: "Sansita Swashed", system-ui` (loaded from Google Fonts in `index.html`).
-- **Bootstrap**: Used only for grid and utilities — not for components. Bootstrap variables are customized via `src/sass/vendors/_bootstrap.scss`.
-- **Font Awesome**: Compiled locally from `node_modules` into `src/webfonts/` — no CDN dependency.
+- **Bootstrap**: Used only for grid and utilities — not for components. Bootstrap variables are customized via `src/sass/vendors/_bootstrap.scss` using `@forward ... with ($primary, $secondary, $font-family-sans-serif, $btn-font-weight)`.
+- **Font Awesome**: Compiled locally from `node_modules/@fortawesome/fontawesome-free` into `src/webfonts/` — no CDN dependency. Configured in `src/sass/vendors/_fontawesome.scss`.
 - **Component styles** in `src/sass/components/` are not CSS-scoped (global CSS class names).
+- **Partials**: Use leading underscore and kebab-case naming (e.g., `_recipe-load.scss`). Each directory has an `_index.scss` that `@forward`'s its members.
+- **2-space indentation** in SCSS files.
 
 ### HTML/DOM
 
-- Views toggle via CSS class `hidden` (not removed from DOM).
+- Views toggle via CSS class `hidden` (`display: none !important`) — elements remain in DOM, visibility toggled.
 - Scroll position reset to top when navigating to a recipe page.
 - Sticky header behavior attached per-page-section (hero vs recipe image).
+- Static HTML in `index.html` serves as initial DOM skeleton; views replace inner content via `_clear()` + `insertAdjacentHTML`.
 
 ### Git
 
-- `.gitignore` excludes: `node_modules/`, `dist`, `.parcel-cache`, `.idea`.
+- `.gitignore` excludes: `node_modules/`, `dist/`, `.parcel-cache/`, `.env/`, `.idea/`.
+- Commit style: short, imperative summaries (e.g., `Added readme.md`, `Improvements to readme`).
+- Commitizen configured with `cz-conventional-changelog` in package.json.
 
 ## Notes
 
 - No test framework or test files exist in the project.
-- The `CLAUDE.md` file contains equivalent guidance for Claude Code and should be kept in sync with this file for overlapping conventions.
+- The `CLAUDE.md` and `AGENTS.md` files contain equivalent guidance for other AI tools and should be kept in sync with this file for overlapping conventions.
 - The project is a portfolio/demonstration piece focused on architectural patterns rather than production deployment.
+- `src/js/icons.js` exists but appears to be unused (Font Awesome is loaded via SCSS/webfonts).
+- `src/js/bootstrap.bundle.min.js` is loaded as a non-module script in `index.html` (pre-bundled Bootstrap JS for modal/tooltip behavior).
